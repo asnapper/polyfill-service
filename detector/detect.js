@@ -18,6 +18,7 @@ function renderResult(name, result) {
     var parentFailed = document.getElementById('failed');
 
     var container = document.createElement('DIV');
+    container.setAttribute('class', 'row');
 
     var resultContainer = document.createElement('SPAN');
     resultContainer.setAttribute('class', 'result result-' + result);
@@ -38,11 +39,16 @@ function renderResult(name, result) {
     }
 }
 
+function getConfig() {
+    return document.getElementById('oipfcfg').configuration;
+}
+
 function reportResult(name, result) {
+    var localSystem = getConfig();
     var oReq = new XMLHttpRequest();
     oReq.open('POST', '/report');
     oReq.setRequestHeader('Content-Type', 'application/json');
-    oReq.send(JSON.stringify({device:'Unknown', name, result}));
+    oReq.send(JSON.stringify({device: localSystem, name, result}));
     delete oReq;
 }
 

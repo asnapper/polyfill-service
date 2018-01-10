@@ -7,8 +7,12 @@
     <link href="styles.css" type="text/css" rel="stylesheet" />
     </head>
     <body>
-        <div id="failed"></div>
-        <div id="successful"></div>
+        <object id="appmgr" type="application/oipfApplicationManager" style="position: absolute; left: 0; top: 0; width: 0; height: 0;"></object>
+        <object id="oipfcfg" type="application/oipfConfiguration" style="position: absolute; left: 0; top: 0; width: 0; height: 0;"></object>
+        <div id="app">
+            <div id="failed"></div>
+            <div id="successful"></div>
+        </div>
         <script type="text/javascript" src="polyfill-index.js"></script>
         <script type="text/javascript" src="detect.js"></script>
     </body>
