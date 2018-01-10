@@ -7,7 +7,9 @@ function evalHandler(url) {
         }.call(context, this.responseText) ? true : false;
         var name = url.replace('/detect.js', '').replace('../polyfills/', '');
         renderResult(name, result);
-        reportResult(name, result);
+        if (!result) {
+            reportResult(name, result);
+        }
     }
 }
 
@@ -37,13 +39,21 @@ function renderResult(name, result) {
 }
 
 function reportResult(name, result) {
-    
-}
-
-for (var i = 0; i < index.length; i++) {
     var oReq = new XMLHttpRequest();
-    oReq.addEventListener("load", evalHandler(index[i]));
-    oReq.open("GET", index[i]);
-    oReq.send();
+    oReq.open('POST', '/report');
+    oReq.setRequestHeader('Content-Type', 'application/json');
+    oReq.send(JSON.stringify({device:'Unknown', name, result}));
     delete oReq;
 }
+
+function main() {
+    for (var i = 0; i < index.length; i++) {
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", evalHandler(index[i]));
+        oReq.open("GET", index[i]);
+        oReq.send();
+        delete oReq;
+    }
+}
+
+main();
