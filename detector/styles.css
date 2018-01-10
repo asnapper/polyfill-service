@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 1280px;
+    height: 720px;
+    background-color: black;
+}
+
+div {
+    width: 700px;
+    font-family: sans-serif;
+    color: white;
+    position: relative;
+    margin: 2px;
+}
+
+.result {
+    position: absolute;
+    right: 0;
+    border: solid 1px black;
+    border-radius: 2px;
+    width: 50px;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.result-false {
+    background-color: red;
+}
+
+.result-true {
+    background-color: green;
+}
