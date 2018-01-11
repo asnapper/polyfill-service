@@ -28,4 +28,6 @@ app.get('/report', (req, res) => {
     res.status(200).send(data)
 })
 
-app.listen(8080)
+app.listen(8080, () => {
+    console.log('listening on port 8080')
+})
