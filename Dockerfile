@@ -1,7 +1,6 @@
 FROM node:alpine
-RUN mkdir /app
 WORKDIR /app
-RUN npm install express
+RUN npm init -y && npm install express morgan
 ADD polyfills ./polyfills
 ADD detector ./detector
 ADD reporting-service ./reporting-service
