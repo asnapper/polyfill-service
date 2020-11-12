@@ -133,7 +133,7 @@
 		"fastly-purge": "^1.0.1",
 		"gaze": "^1.1.2",
 		"mockery": "^1.7.0",
-		"node-fetch": "^1.6.0",
+		"node-fetch": "^2.6.1",
 		"nyc": "^10.0.0",
 		"sauce-tunnel": "^2.2.3",
 		"sinon": "^4.0.1",
